@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { NavLink } from 'react-router-dom';
 import logo from "../assets/logo.png"
 import iconYoga from "../assets/icon-yoga.png"
 import iconSwim from "../assets/icon-swim.png"
@@ -17,7 +17,10 @@ const Navigation = () => {
             <div className='Navigation-horizontale'>
                 <img className='logo' src={logo} alt='logo sportsee' />
                 <div className='container-nav'>
-
+                    <NavLink className={(nav) => (nav.isActive ? "nav-active" : "nav")} to={"/"}>Accueil</NavLink>
+                    <NavLink className={(nav) => (nav.isActive ? "nav-active" : "nav")} to={"/user"}>Profil</NavLink>
+                    <NavLink className={(nav) => (nav.isActive ? "nav-active" : "nav")} to={"/settings"}>Réglage</NavLink>
+                    <NavLink className={(nav) => (nav.isActive ? "nav-active" : "nav")} to={"/community"}>Communauté</NavLink>
                 </div>
             </div>
             <div className='Navigation-verticale'>
