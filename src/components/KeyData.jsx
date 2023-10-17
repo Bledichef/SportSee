@@ -12,7 +12,7 @@ import iconGlucides from "../assets/glucide-icon.png"
  * @returns {JSX} - React component
  */
 const KeyData = ({ keyData }) => {
-
+    console.log("KeyData:", keyData);
     return (
         <div className='container-keyData'>
             <OneKeyData keyImg={iconCalories} keyData={keyData?.calorieCount.toLocaleString('en')} keyUnit="kCal" keyName={" Calories"} />
