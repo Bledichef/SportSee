@@ -1,0 +1,68 @@
+.Navigation-horizontale {
+    background-color: #020203;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80px;
+    box-shadow: 0px 4px 4px 0px #000000;
+
+    .logo {
+        width: 150px;
+    }
+
+    .container-nav {
+        width: 70%;
+        display: flex;
+        justify-content: space-around;
+
+        .nav {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .nav-active {
+            color: #FF0101;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+}
+
+.Navigation-verticale {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    min-height: 780px;
+    height: 100%;
+    background-color: #020203;
+    justify-content: center;
+    position: absolute;
+
+    .container-icon {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .icon {
+            width: 55%;
+        }
+    }
+
+    .copiryght {
+        position: relative;
+        width: 200px;
+        color: #FFFFFF;
+        transform: rotate(-90deg);
+        font-size: 10px;
+        top: 85px;
+        right: 50px;
+    }
+
+}

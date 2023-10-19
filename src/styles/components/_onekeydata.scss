@@ -1,0 +1,47 @@
+.OneKeyData {
+    display: flex;
+    align-items: center;
+    padding-right: 8%;
+    padding-left: 8%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #FBFBFB;
+    border-radius: 5px;
+    height: 100px;
+    width: 83%;
+
+    .icon {
+        width: 30%;
+        border-radius: 6px;
+    }
+
+    .container-number-name {
+        width: 20%;
+        margin-left: 10%;
+
+        .number,
+        .unit {
+            font-weight: 700;
+            color: #282D30;
+            font-size: 18px;
+        }
+
+        .name {
+            font-weight: 500;
+            color: #74798C;
+            font-size: 14px;
+        }
+    }
+}
+
+@media screen and (min-width:2047px) {
+    .OneKeyData {
+        .icon {
+            width: 22%;
+        }
+
+        .container-number-name {
+            width: 15%;
+        }
+    }
+}

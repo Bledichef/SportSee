@@ -1,0 +1,39 @@
+.PieChart {
+    height: 220px;
+    width: 32%;
+    background-color: #FBFBFB;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .title-chart {
+        font-size: 15px;
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        font-weight: 500;
+        color: #20253A;
+    }
+
+    .legend-number {
+        position: absolute;
+        top: 38%;
+        font-size: 24px;
+        font-weight: 700;
+        color: #282D30
+    }
+
+    .legend-text {
+        position: absolute;
+        top: 43%;
+        opacity: 0.5;
+        font-size: 15px;
+        font-weight: 500;
+        color: #282D30;
+        text-align: center;
+        line-height: 26px;
+    }
+}

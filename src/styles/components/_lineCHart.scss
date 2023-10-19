@@ -1,0 +1,30 @@
+.LineChart {
+    background-color: #FF0000;
+    width: 32%;
+    height: 220px;
+    border-radius: 5px;
+    position: relative;
+
+    .title-linechart {
+        position: absolute;
+        left: 15px;
+        top: 20px;
+        font-size: 15px;
+        opacity: 50%;
+        width: 60%;
+        color: #FFF;
+    }
+}
+
+.container-payload-linechart {
+    width: 40px;
+    height: 30px;
+    justify-content: center;
+    display: flex;
+    background-color: #FFF;
+
+    .mn {
+        font-size: 10px;
+        font-weight: 500;
+    }
+}

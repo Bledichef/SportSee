@@ -1,8 +1,10 @@
 import { Navigate, useParams } from 'react-router-dom';
-
+import BarChartRender from '../components/BartChartRender';
 import KeyData from '../components/KeyData';
 import { userList } from '../utils/const/userList';
-
+import LineChartRender from '../components/LineChartRender';
+import RadarChartRender from '../components/RadarChartRender';
+import PieChartRender from '../components/PieChartRender';
 import { urlMock } from '../utils/const/urlMock';
 import { callApi } from '../utils/useApi/useApi';
 import { useContext, useEffect, useState } from "react";
@@ -21,9 +23,10 @@ const Profile = () => {
     const url = mode
     const [loading, setLoading] = useState(true);
     const [mainData, setMainData] = useState({});
-    const [activityData, setActivityData] = useState({});
-    const [averageSessionsData, setAverageSessionsData] = useState({});
-    const [performancesData, setPerformancesData] = useState({});
+    const [dataActivity, setActivityData] = useState({});
+    const [dataAverageSessions, setAverageSessionsData] = useState({});
+    const [dataPerformances, setPerformancesData] = useState({});
+
     //const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -84,22 +87,24 @@ const Profile = () => {
         return <div>Chargement en cours...</div>;
     }
 
-
+    const dataTodayScore = mainData.todayScore || mainData.score;
+    
 
    // const dataMain = useApi(url.userMainData(id))
     // const dataActivity = useApi(url.userActivity(id))
     // const dataAverageSessions = useApi(url.userAverageSessions(id))
     // const dataPerformances = useApi(url.userPerformances(id))
 
+    console.log("dataAverageSessions in Profile:", dataAverageSessions);
 
 
 
     // if (dataMain.errorUrl || dataActivity.errorUrl || dataAverageSessions.errorUrl || dataPerformances.errorUrl) {
     //     return <Navigate to="/error" />
     // }
-
+    console.log("dataTodayScore in Profile:", dataTodayScore);
 console.log(data)
-console.log(mainData?.data?.keyData);
+console.log(dataActivity);
 console.log("Main Data:", mainData);
 
 console.log(mainData)
@@ -111,8 +116,15 @@ return (
         </header>
         <div className='container-graph'>
             <div className='container-graph-recharts'>
+            {dataActivity && (
+        <BarChartRender dataActivity={dataActivity} />
+    )}
 
                 <div className='container-small-graph'>
+                <LineChartRender dataAverageSessions={dataAverageSessions} />
+                        {dataPerformances && <RadarChartRender dataPerformances={dataPerformances} />}
+                        <PieChartRender dataTodayScore={dataTodayScore} />
+
 
                 </div>
             </div>

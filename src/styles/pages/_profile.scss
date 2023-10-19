@@ -1,0 +1,54 @@
+.Profile {
+    left: 119px;
+    width: 87%;
+    height: 780px;
+    position: absolute;
+
+    header {
+        .title {
+            font-size: 40px;
+            font-weight: 500;
+
+            .firstname {
+                color: #FF0101;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+
+
+    .container-graph {
+        display: flex;
+        margin-bottom: 3%;
+        justify-content: space-between;
+
+        .container-graph-recharts {
+            width: 76%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .container-small-graph {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+
+            }
+        }
+    }
+
+    .data-type {
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        font-style: italic;
+    }
+
+
+
+
+}

@@ -1,0 +1,20 @@
+.ButtonUser {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 10%;
+    margin-left: 10%;
+
+    .button {
+        background-color: #FF0101;
+        font-size: 16px;
+        font-weight: 700;
+        color: #FFF;
+        border: none;
+        border-radius: 10px;
+        height: 40px;
+        width: 150px;
+        margin-right: 5%;
+        box-shadow: 2px 2px 2px 0px #000;
+    }
+}
