@@ -10,11 +10,11 @@ import { Pie, PieChart, ResponsiveContainer } from 'recharts';
 const PieChartRender = ({ dataTodayScore }) => {
 
 
-    // Error in JSON + in backend (score/todayScore)
-    const todayScore = dataTodayScore?.score || dataTodayScore?.todayScore
+    
+    const todayScore = dataTodayScore
+    
 
-
-
+console.log(dataTodayScore)
     const delta = 100 - (todayScore * 100)
 
     const score = [
