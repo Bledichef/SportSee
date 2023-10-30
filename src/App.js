@@ -24,6 +24,7 @@ const App = () => {
           <Route path='/settings' element={<Settings />} />
           <Route path='/error' element={<Error />} />
           <Route path='*' element={<Error />} />
+          
         </Routes>
       </ModeProvider>
     </BrowserRouter>

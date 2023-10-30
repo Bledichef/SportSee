@@ -12,7 +12,7 @@ const SwitchButton = () => {
     return (
         <div>
             <button className='buttonSwitch' onClick={toogleMode}>
-                👉🏻 Cliquez ici pour passer en mode {mode === 'api' ? "Mock" : "API"}
+                👉🏻 Cliquez ici pour Changer de  {mode === 'api' ? "Mock" : "Source Data"}
             </button>
         </div>
     );
