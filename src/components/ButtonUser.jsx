@@ -4,6 +4,13 @@ import { ModeContext } from "../utils/context";
 import { userList } from '../utils/const/userList';
 import { urlApi } from '../utils/const/urlApi';
 
+/**
+ * Component "Button user" to display the button to change user
+ * @param {Object} props - Les propriétés du composant.
+ * @param {Array} props.userList - La liste des utilisateurs.
+ * @returns {JSX} Composant React.
+ */
+
 const ButtonUser = ({ userList }) => {
     const { mode } = useContext(ModeContext);
 

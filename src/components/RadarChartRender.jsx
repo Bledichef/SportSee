@@ -3,9 +3,10 @@ import React from 'react';
 import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer } from 'recharts';
 
 /**
- * chart about performance details of one user
- * @param {Array} dataPerformances -  - props of component parent Profile / infos about performance details
- * @returns {JSX} - React component
+ * Composant de graphique radar représentant les détails de performance d'un utilisateur.
+ * @param {Object} props - Les propriétés du composant.
+ * @param {Array} props.dataPerformances - Les informations sur les détails de performance.
+ * @returns {JSX} Composant React.
  */
 const RadarChartRender = ({ dataPerformances }) => {
     const performancesData = dataPerformances.data;

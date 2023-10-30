@@ -2,6 +2,16 @@ import PropTypes from "prop-types";
 import React from 'react';
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
+
+/**
+ * Composant de rendu d'un graphique en courbe (Line Chart).
+ * Affiche la durée moyenne des sessions.
+ * @param {Object} props - Les propriétés du composant.
+ * @param {Array} props.dataAverageSessions - Les données de sessions pour le graphique.
+ * @returns {JSX} Composant React.
+ */
+
+
 const LineChartRender = ({ dataAverageSessions }) => {
     console.log("dataAverageSessions in LineChartRender:", dataAverageSessions);
 

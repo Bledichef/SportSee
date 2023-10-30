@@ -13,8 +13,8 @@ import { ModeContext } from "../utils/context"
 
 
 /**
- * Page profil with all charts and infos
- * @returns {JSX} - React component - Page 
+ * Page de profil affichant des informations détaillées et des graphiques sur un utilisateur.
+ * @returns {JSX} Composant React - Page de profil.
  */
 const Profile = () => {
     const { id } = useParams()

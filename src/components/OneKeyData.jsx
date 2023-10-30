@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from "prop-types"
 
 /**
- * 
- * @param {String} keyImg - props contains all img 
- * @param {(String | Number)} keyData - props contains all keyData (keyData of calories is a string, the rest is a number) 
- * @param {String} keyName - props contains all the name
- * @param {String} keyUnit - props contains all the unit
- * @returns {JSX} - React component 
+ * Composant pour afficher une donnée clé.
+ * @param {String} keyImg - URL de l'image associée à la donnée clé.
+ * @param {(String | Number)} keyData - La valeur de la donnée clé (les calories sont une chaîne, le reste est un nombre).
+ * @param {String} keyName - Le nom de la donnée clé.
+ * @param {String} keyUnit - L'unité de mesure de la donnée clé.
+ * @returns {JSX} Composant React.
  */
 const OneKeyData = ({ keyImg, keyData, keyName, keyUnit }) => {
 

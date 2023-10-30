@@ -6,8 +6,9 @@ import { userList } from '../utils/const/userList';
 
 
 /**
- * Page Home 
- * @returns {JSX} - React component - Page
+ * Page d'accueil du site.
+ * Permet aux utilisateurs de sélectionner leur numéro d'utilisateur pour consulter leurs performances.
+ * @returns {JSX} Composant React - Page d'accueil.
  */
 const Home = () => {
 

@@ -3,9 +3,10 @@ import React from 'react';
 import { Pie, PieChart, ResponsiveContainer } from 'recharts';
 
 /**
- * chart about daily target percentage of one user
- * @param {Object} dataTodayScore - props of component parent Profile / infos about daily target percentage
- * @returns {JSX} - React component
+ * Composant de graphique en secteurs (Pie Chart) représentant le pourcentage de l'objectif quotidien d'un utilisateur.
+ * @param {Object} props - Les propriétés du composant.
+ * @param {number} props.dataTodayScore - Les informations sur le pourcentage de l'objectif quotidien.
+ * @returns {JSX} Composant React.
  */
 const PieChartRender = ({ dataTodayScore }) => {
 

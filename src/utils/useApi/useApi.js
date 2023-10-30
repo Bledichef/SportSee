@@ -1,37 +1,19 @@
-// //import React from "react"
-// import axios from "axios"
-// //import { useEffect, useState } from "react"
-// //import convertData from "../mapper/convertData"
-
-
-//  export const useApi = (url) => {
-//  //   const [data, setData] = useState({})
-//    // const [errorUrl, setErrorUrl] = useState(false)
-
-//    // useEffect(() => {
-//      return   axios.get(url)
-//           //  .then(res => setData(convertData(res.data, url)))
-//             .then(res => res.data)
-//             //)
-//             .catch(error => {
-//               //  setErrorUrl(true);
-//                 console.log(error)
-//             })
-//  //   }, [url])
-//    // return { data, errorUrl }
-// }
 
 
 import axios from "axios"
 //import { useEffect, useState } from "react"
 import convertData from "../mapper/convertData"
 
-export const callApi = (url) => {
-    // const [data, setData] = useState({})
-    // const [errorUrl, setErrorUrl] = useState(false)
-    // const [errorServer, setErrorServer] = useState(false)
+/**
+ * Effectue un appel à une API en utilisant axios, convertit les données en fonction de l'URL, et renvoie les données converties.
+ * @param {string} url - L'URL de l'API à appeler.
+ * @returns {Promise<any>} - Une promesse qui résout en données converties ou renvoie une erreur.
+ */
 
-  //  useEffect(() => {
+export const callApi = (url) => {
+
+
+
         if (url) {
             return axios.get(url)
                 .then(res => convertData(res.data, url))
@@ -41,6 +23,5 @@ export const callApi = (url) => {
                     // setErrorServer(true)
                 })
         }
-  //  }, [url])
-  //  return { data, errorUrl, errorServer }
+
 }

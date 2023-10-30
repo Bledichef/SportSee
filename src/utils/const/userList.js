@@ -1,3 +1,7 @@
+/**
+ * Liste des utilisateurs avec leurs identifiants et noms.
+ */
+
 export const userList = [
     {
         id: 12,

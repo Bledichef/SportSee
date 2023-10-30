@@ -7,9 +7,11 @@ import iconLipides from "../assets/lipide-icon.png"
 import iconGlucides from "../assets/glucide-icon.png"
 
 /**
- * child component of Profile / Parent component of OneKeyData
- * @param {Object} keyData -  props of component parent Profile / object contains all key data
- * @returns {JSX} - React component
+ * Composant enfant de Profile et parent de OneKeyData.
+ * Affiche les données clés.
+ * @param {Object} props - Les propriétés du composant.
+ * @param {Object} props.keyData - Objet contenant toutes les données clés.
+ * @returns {JSX} Composant React.
  */
 const KeyData = ({ keyData }) => {
     console.log("KeyData:", keyData);
