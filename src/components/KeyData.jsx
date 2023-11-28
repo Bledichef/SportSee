@@ -14,10 +14,14 @@ import iconGlucides from "../assets/glucide-icon.png"
  * @returns {JSX} Composant React.
  */
 const KeyData = ({ keyData }) => {
-    if (!keyData || !keyData.sessions) {
-        
+    console.log("Received keyData:", keyData);
+
+    if (!keyData || Object.keys(keyData).length === 0) {
         return <div>Données de sessions manquantes.</div>;
-      }
+    }
+    
+    
+    
     
     console.log("KeyData:", keyData);
     return (
