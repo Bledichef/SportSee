@@ -8,8 +8,8 @@ import PieChartRender from '../components/PieChartRender';
 import { urlMock } from '../utils/const/urlMock';
 import { callApi } from '../utils/useApi/useApi';
 import { useContext, useEffect, useState } from "react";
-import { ModeContext } from "../utils/context"
-
+import { ModeContext } from "../utils/context";
+import UserPerformances from '../utils/classes/UserPerformances';
 
 
 /**
@@ -80,14 +80,26 @@ const Profile = () => {
             try {
                 const dataPerformances = await callApi(url.userPerformances(id));
                 console.log("Performances Data:", dataPerformances);
-                setPerformancesData(dataPerformances);
+    
+                // Tri des données en utilisant l'ordre spécifié
+                const sortedDataPerformances = Object.keys(dataPerformances)
+                    .sort((a, b) => UserPerformances.PerformanceOrder[a] - UserPerformances.PerformanceOrder[b])
+                    .reduce((obj, key) => {
+                        obj[key] = dataPerformances[key];
+                        return obj;
+                    }, {});
+    
+                setPerformancesData(sortedDataPerformances);
+                console.log("Performances Data Sorted:", sortedDataPerformances);
             } catch (error) {
                 console.error("Error fetching Performances Data:", error);
                 setError("Une erreur s'est produite lors du chargement des données de performances.");
             }
         }
+    
         fetchPerformancesData();
     }, [id, url]);
+    
     if (error) {
         return (
             <div className='error-message'>

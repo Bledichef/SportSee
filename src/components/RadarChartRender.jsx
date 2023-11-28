@@ -1,6 +1,8 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from 'react';
 import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer } from 'recharts';
+import UserPerformances from '../utils/classes/UserPerformances';
+
 
 /**
  * Composant de graphique radar représentant les détails de performance d'un utilisateur.
@@ -8,10 +10,12 @@ import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, Responsi
  * @param {Array} props.dataPerformances - Les informations sur les détails de performance.
  * @returns {JSX} Composant React.
  */
+console.log("1")
 const RadarChartRender = ({ dataPerformances }) => {
+    console.log("2")
     const performancesData = dataPerformances.data;
-    
 
+    console.log("performancesData:", performancesData);
     const french = {
         1: "Intensité",
         2: "Vitesse",
@@ -20,9 +24,15 @@ const RadarChartRender = ({ dataPerformances }) => {
         5: "Energie",
         6: "Cardio",  
     }
-
+    // const french = {
+    //     1: "Cardio",
+    //     2: "Energie",
+    //     3: "Endurance",
+    //     4: "Force",
+    //     5: "Vitesse",
+    //     6: "Intensité"
+    // }
     const translation = (el) => french[el]
-
     return (<>{performancesData && (
         <div className='RadarChart'>
             <ResponsiveContainer width="100%" height="100%">
@@ -39,7 +49,7 @@ const RadarChartRender = ({ dataPerformances }) => {
 };
 
 RadarChartRender.propTypes = {
-    dataPerformances: PropTypes.array
-}
+    dataPerformances: PropTypes.array,
+};
 
 export default RadarChartRender;
