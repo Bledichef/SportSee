@@ -26,6 +26,7 @@ const Profile = () => {
     const [dataActivity, setActivityData] = useState({});
     const [dataAverageSessions, setAverageSessionsData] = useState({});
     const [dataPerformances, setPerformancesData] = useState({});
+    const [error, setError] = useState(null);
 
     //const [loading, setLoading] = useState(true);
 
@@ -39,6 +40,7 @@ const Profile = () => {
             } catch (error) {
                 console.error("Error fetching Main Data:", error);
                 setLoading(false);
+                setError("Une erreur s'est produite lors du chargement des données principales.");
             }
         }
         fetchData();
@@ -52,7 +54,9 @@ const Profile = () => {
                 setActivityData(dataActivity);
             } catch (error) {
                 console.error("Error fetching Activity Data:", error);
+                setError("Une erreur s'est produite lors du chargement des données d'activité.");
             }
+            
         }
         fetchActivityData();
     }, [id, url]);
@@ -65,6 +69,7 @@ const Profile = () => {
                 setAverageSessionsData(dataAverageSessions);
             } catch (error) {
                 console.error("Error fetching Average Sessions Data:", error);
+                setError("Une erreur s'est produite lors du chargement des données de sessions moyennes.");
             }
         }
         fetchAverageSessionsData();
@@ -78,16 +83,25 @@ const Profile = () => {
                 setPerformancesData(dataPerformances);
             } catch (error) {
                 console.error("Error fetching Performances Data:", error);
+                setError("Une erreur s'est produite lors du chargement des données de performances.");
             }
         }
         fetchPerformancesData();
     }, [id, url]);
+    if (error) {
+        return (
+            <div className='error-message'>
+                Une erreur s'est produite : {error}
+            </div>
+        );
+    }
 
     if (loading) {
         return <div>Chargement en cours...</div>;
     }
 
-    const dataTodayScore = mainData.todayScore || mainData.score;
+    const dataTodayScore = mainData?.todayScore || mainData?.score || 0;
+
     
 
    // const dataMain = useApi(url.userMainData(id))
@@ -111,7 +125,8 @@ console.log(mainData)
 return (
     <div className='Profile'>
         <header>
-            <h1 className='title'>Bonjour <span className='firstname'>{mainData.userInfos.firstName}</span></h1>
+        <h1 className='title'>Bonjour <span className='firstname'>{mainData?.userInfos?.firstName}</span></h1>
+
             <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </header>
         <div className='container-graph'>
@@ -128,7 +143,8 @@ return (
 
                 </div>
             </div>
-            <KeyData keyData={mainData.keyData} />
+            <KeyData keyData={mainData?.keyData || {}} />
+
 
         </div>
         <span className='data-type'>{mode === urlMock ? "--- Données Mockées ---" : "--- Données de l'API ---"}</span>

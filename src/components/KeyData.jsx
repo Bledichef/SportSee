@@ -14,6 +14,11 @@ import iconGlucides from "../assets/glucide-icon.png"
  * @returns {JSX} Composant React.
  */
 const KeyData = ({ keyData }) => {
+    if (!keyData || !keyData.sessions) {
+        
+        return <div>Données de sessions manquantes.</div>;
+      }
+    
     console.log("KeyData:", keyData);
     return (
         <div className='container-keyData'>

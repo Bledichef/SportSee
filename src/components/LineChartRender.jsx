@@ -13,6 +13,10 @@ import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'rec
 
 
 const LineChartRender = ({ dataAverageSessions }) => {
+    if (!dataAverageSessions || !dataAverageSessions.sessions) {
+       
+        return <div>Données de sessions manquantes.</div>;
+      }
     console.log("dataAverageSessions in LineChartRender:", dataAverageSessions);
 
     const day = {
